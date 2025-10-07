@@ -36,7 +36,7 @@ class MainPage(BasePage):
     @allure.step('Проверить отображение заголовка главной страницы')
     def check_displaying_of_main_header(self):
         return self.check_displaying_of_element(MainPageLocators.main_header)
-
+    
     @allure.step('Проскроллить до секции "Вопросы о важном"')
     def scroll_to_faq_section(self):
         self.scroll_to_element(MainPageLocators.faq_section)
@@ -56,3 +56,20 @@ class MainPage(BasePage):
     @allure.step('Получить текст нужного номера ответа в аккордеоне "Вопросы о важнoм"')
     def get_displayed_text_from_faq_answer(self, data):
         return self.get_text_on_element(MainPageLocators.faq_answers_items[data])
+    
+    @allure.step('Получить текущий url')
+    def get_current_url(self):
+        return self.driver.current_url
+    
+    @allure.step('Подождать прогрузки ')
+    def wait_visibility_of_main_header(self):
+        self.wait_visibility_of_element(MainPageLocators.main_header)
+
+    @allure.step('Проверить URL страницы')
+    def check_url(self):
+        current_url = self.driver.current_url
+        return current_url
+    
+    @allure.step('Подождать прогрузки ')
+    def wait_visibility_of_dzen_header(self):
+        self.wait_visibility_of_element(MainPageLocators.dzen_header)

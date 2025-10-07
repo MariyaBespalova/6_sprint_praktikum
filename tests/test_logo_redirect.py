@@ -21,4 +21,7 @@ class TestLogoRedirect:
         main_page.wait_visibility_of_header_logo_yandex()
         main_page.click_on_header_logo_yandex()
         main_page.switch_to_next_tab()
-        assert main_page.get_page_title() == 'Дзен'
+        main_page.wait_visibility_of_dzen_header()
+        current_url = main_page.check_url()
+        expecdet_url = 'https://dzen.ru/?yredirect=true'
+        assert  current_url == expecdet_url

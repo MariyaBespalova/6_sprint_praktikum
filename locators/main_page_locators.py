@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 class MainPageLocators:
+    
     main_header = (By.XPATH, '//div[contains(@class, "Home_Header__iJKdX")]')
     # Раздел "Вопросы о важном"
     faq_section = (By.XPATH, '//div[contains(@class, "Home_FAQ")]')
@@ -34,4 +35,7 @@ class MainPageLocators:
     # Локаторы для лого в шапке
     header_logo_scooter = (By.XPATH, '//a[@href="/" and contains(@class, "Header_LogoScooter")]')
     header_logo_yandex = (By.XPATH, '//a[@href="//yandex.ru" and contains(@class, "Header_LogoYandex")]')
-    title_of_page = (By.TAG_NAME, 'title')
+    title_of_page = (By.XPATH, '//div[@class="dzen-layout--login-button__iconButtonContainer-2_"]')
+
+    dzen_login = (By.XPATH, '//input[@class="arrow__input mini-suggest__input"]')
+    dzen_header = (By.XPATH, '//div[text()="Новости"]')
