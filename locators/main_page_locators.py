@@ -39,3 +39,5 @@ class MainPageLocators:
 
     dzen_login = (By.XPATH, '//input[@class="arrow__input mini-suggest__input"]')
     dzen_header = (By.XPATH, '//div[text()="Новости"]')
+    #  Главная страница Дзена
+    expected_url = 'https://dzen.ru/?yredirect=true'

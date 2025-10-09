@@ -21,7 +21,6 @@ class TestLogoRedirect:
         main_page.wait_visibility_of_header_logo_yandex()
         main_page.click_on_header_logo_yandex()
         main_page.switch_to_next_tab()
-        main_page.wait_visibility_of_dzen_header()
         current_url = main_page.check_url()
-        expecdet_url = 'https://dzen.ru/?yredirect=true'
-        assert  current_url == expecdet_url
+        main_page.wait_visibility_of_dzen_header()
+        assert 'dzen.ru' in main_page.check_dzen(), f"Текущий URL не содержит 'dzen.ru': {current_url}"

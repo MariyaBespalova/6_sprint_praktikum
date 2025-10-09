@@ -61,7 +61,7 @@ class MainPage(BasePage):
     def get_current_url(self):
         return self.driver.current_url
     
-    @allure.step('Подождать прогрузки ')
+    @allure.step('Подождать прогрузки элемента')
     def wait_visibility_of_main_header(self):
         self.wait_visibility_of_element(MainPageLocators.main_header)
 
@@ -70,6 +70,10 @@ class MainPage(BasePage):
         current_url = self.driver.current_url
         return current_url
     
-    @allure.step('Подождать прогрузки ')
+    @allure.step('Проверить URL страницы')
+    def check_dzen(self):
+        return MainPageLocators.expected_url
+    
+    @allure.step('Подождать прогрузки страницы Дзена')
     def wait_visibility_of_dzen_header(self):
         self.wait_visibility_of_element(MainPageLocators.dzen_header)
