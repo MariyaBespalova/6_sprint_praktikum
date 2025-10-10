@@ -57,10 +57,6 @@ class MainPage(BasePage):
     def get_displayed_text_from_faq_answer(self, data):
         return self.get_text_on_element(MainPageLocators.faq_answers_items[data])
     
-    @allure.step('Получить текущий url')
-    def get_current_url(self):
-        return self.driver.current_url
-    
     @allure.step('Подождать прогрузки элемента')
     def wait_visibility_of_main_header(self):
         self.wait_visibility_of_element(MainPageLocators.main_header)
