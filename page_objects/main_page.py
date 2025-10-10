@@ -67,8 +67,7 @@ class MainPage(BasePage):
 
     @allure.step('Проверить URL страницы')
     def check_url(self):
-        current_url = self.driver.current_url
-        return current_url
+        return self.current_url
     
     @allure.step('Проверить URL страницы')
     def check_dzen(self):

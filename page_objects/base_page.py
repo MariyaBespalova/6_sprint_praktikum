@@ -40,3 +40,8 @@ class BasePage:
     @allure.step('Проверить отображение элемента')
     def check_displaying_of_element(self, locator):
         return self.driver.find_element(*locator).is_displayed()
+    
+    @property
+    @allure.step('Получить текущий URL страницы')
+    def current_url(self):
+        return self.driver.current_url
